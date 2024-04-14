@@ -47,4 +47,17 @@ function kirim() {
     var newUrl = "index.html";
     window.history.replaceState(null, null, newUrl); 
     window.location.href = newUrl; 
+
+    let feedback = prompt ('Berikan kami feedback !!')
+    confirm (`Terimkasih atas feedback nya "${feedback}" 🙏🏻🙏🏻`)
 }
+
+// const h6 = document.createElement('h6')
+// h6.textContent = "Developed by Aliza Nurfitrian"
+// body.append(h6)
+const body = document.body
+const foot = document.getElementById('mee')
+foot.style.color = 'white'
+foot.style.textAlign = 'center'
+foot.style.marginTop = '30px'
+foot.style.fontWeight = '600'
