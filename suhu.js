@@ -19,6 +19,12 @@ function validForm(event){
 }
 
 function yuuLogin(){
+    alert (`
+    1. Quizezzz ini memiliki 1 pertanyaan
+    2. Waktu pengerjaaan adalah 5 menit
+    3. Jika waktu habis, maka jawaban akan tersubmit otomatis
+    4. Selamat mengerjakan 😊
+    `)
     window.location.replace("home.html");
 }
 
@@ -45,16 +51,23 @@ countdown(300)
 // kirim jawaban
 function kirim() {
     var jawaban = document.getElementById("answer").value;
+    if (!jawaban) {
+        alert("Anda harus mengisi jawaban terlebih dahulu!");
+        return; 
+    }
 
-    alert("Jawaban anda telah terkirim!!")
+    alert("Jawaban anda telah terkirim!!");
     
-    var newUrl = "index.html";
-    window.history.replaceState(null, null, newUrl); 
-    window.location.href = newUrl; 
-
-    let feedback = prompt ('Berikan kami feedback !!')
-    confirm (`Terimkasih atas feedback nya "${feedback}" 🙏🏻`)
+    let feedback = prompt('Berikan kami feedback !!');
+    if (feedback === null || feedback === "") {
+        alert('Anda harus wajib memberikan feedback!!');
+        kirim(); 
+    } else {
+        confirm(`Terimakasih atas feedback Anda: "${feedback}" 🙏🏻`);
+        window.location.href = "index.html";
+    }
 }
+
 
 // const h6 = document.createElement('h6')
 // h6.textContent = "Developed by Aliza Nurfitrian"
