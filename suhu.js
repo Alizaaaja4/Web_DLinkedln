@@ -1,3 +1,5 @@
+let whoIAM = ''
+
 function validForm(event){
     event.preventDefault();
 
@@ -5,7 +7,10 @@ function validForm(event){
     const password = document.getElementById('password').value 
 
     if (username === 'quiz' && password === "123"){
-        alert('Anda berhasil login!!');
+        whoIAM = prompt ('Siapa nama kamu ?')
+        alert(`
+        Hallo ${whoIAM} 👋🏻
+        Selamat kamu berhasil login!!`)
         setTimeout(() => {
             yuuLogin();
         }, 200);
@@ -20,6 +25,7 @@ function validForm(event){
 
 function yuuLogin(){
     alert (`
+    Haii, ${whoIAM} tolong perhatikan ketentuan dibawah ini ya!!
     1. Quizezzz ini memiliki 1 pertanyaan
     2. Waktu pengerjaaan adalah 5 menit
     3. Jika waktu habis, maka jawaban akan tersubmit otomatis
@@ -55,7 +61,7 @@ function kirim() {
         alert("Anda harus mengisi jawaban terlebih dahulu!");
         return; 
     }
-
+    
     alert("Jawaban anda telah terkirim!!");
     
     let feedback = prompt('Berikan kami feedback !!');
