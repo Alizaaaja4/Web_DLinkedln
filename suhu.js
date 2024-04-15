@@ -9,7 +9,11 @@ function validForm(event){
         setTimeout(() => {
             yuuLogin();
         }, 200);
-    } else {
+    }  else if (username === 'quiz'){
+        alert('Password yang anda masukan salah!!')
+    } else if (password === '123'){
+        alert('Username yang anda masukan salah!!')
+    }else {
         alert('Username atau password salah. Silahkan coba lagi.');
     }
 }
@@ -49,7 +53,7 @@ function kirim() {
     window.location.href = newUrl; 
 
     let feedback = prompt ('Berikan kami feedback !!')
-    confirm (`Terimkasih atas feedback nya "${feedback}" 🙏🏻🙏🏻`)
+    confirm (`Terimkasih atas feedback nya "${feedback}" 🙏🏻`)
 }
 
 // const h6 = document.createElement('h6')
@@ -59,5 +63,5 @@ const body = document.body
 const foot = document.getElementById('mee')
 foot.style.color = 'white'
 foot.style.textAlign = 'center'
-foot.style.marginTop = '30px'
+foot.style.marginTop = '80px'
 foot.style.fontWeight = '600'
